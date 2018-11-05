@@ -1,10 +1,11 @@
 class Game{
 	Board b;
-	Game();
-	void start();
 	vector<int> all_poss_moves;
 	bool chance;	//If true then white chance else black.
 	void display_moves();	//used to display possible moves the player has
+	public:
+	Game();
+	void start();
 };
 
 Game::Game(){
@@ -14,7 +15,7 @@ Game::Game(){
 
 void Game::start(){
 	int option;
-	for(;;this->chance = !this->chance;){
+	for(;;this->chance = !this->chance){
 		this->all_poss_moves.clear();
 		this->b.move_calculator(this->chance, this->all_poss_moves);
 		this->b.disp_referance();
