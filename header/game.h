@@ -14,8 +14,10 @@ Game::Game(){
 }
 
 void Game::start(){
+	bool k;
+	k = true;
 	int option;
-	for(;;this->chance = !this->chance){
+	for(;k;this->chance = !this->chance){
 		this->all_poss_moves.clear();
 		this->b.move_calculator(this->chance, this->all_poss_moves);
 		this->b.disp_referance();
@@ -30,7 +32,17 @@ void Game::start(){
 				break;
 			cout<<"\nTry Again\n\n";
 		}
-		this->b.move_maker(this->chance, this->all_poss_moves[option]);
+		switch(this->b.move_maker(this->chance, this->all_poss_moves[option])){
+			case 1 :cout<<"\nBlack Won";
+				k = false;
+				break;
+			case 2 :cout<<"\nTie";
+				k = false;
+				break;
+			case 3 :cout<<"\nWhite Won";
+				k = false;
+				break;
+		}
 	}
 }
 

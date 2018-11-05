@@ -12,11 +12,11 @@ Board::Board(){
 }
 
 int Board::move_maker(bool side, int position){
-	return 0;
+	return 1;
 }
 
 void Board::move_calculator(bool side, vector<int>& moves){
-	
+	moves.push_back(1);
 }
 
 void Board::disp_referance(){

@@ -15,6 +15,3 @@ jobs:
       - run:
           name: COMPILING CODE
           command: 'g++ prog.cpp'
-      - run:
-          name: RUNNING CODE
-          command: './a.out'
